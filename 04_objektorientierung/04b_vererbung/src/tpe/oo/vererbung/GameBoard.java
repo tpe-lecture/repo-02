@@ -10,14 +10,15 @@ import de.smits_net.games.framework.board.Board;
 import de.smits_net.games.framework.image.ImageBase;
 import de.smits_net.games.framework.sprite.Sprite;
 
+
 /**
  * Spielfeld.
  */
-public class GameBoard {
+public class GameBoard  extends Board {
 // TODO: Von Board ableiten
 
     /** Alien, das durch das Bild läuft. */
-    private AlienSprite alien;
+    private AlienSprite alien, alien2;
 
     /** Asteroid. */
     private Sprite asteroid;
@@ -25,19 +26,17 @@ public class GameBoard {
     /** Hintergrundbild. */
     private Image background;
 
+
     /**
      * Erzeugt ein neues Board.
      */
-    public GameBoard() {
-// TODO: Einkommentieren
-//        // neues Spielfeld anlegen
-//        super(10, new Dimension(800, 600), Color.BLACK);
-//
-//        // Hintergrundbild laden
-//        background = ImageBase.loadImage("assets/background");
-//
+    public GameBoard(){
+       super(10, new Dimension(800, 600), Color.BLACK);
 
-        // TODO: Alien und Asteroid anlegen und positionieren
+        background = ImageBase.loadImage("assets/background");
+        asteroid = new Asteroid(this, new Point(40, 600));
+        alien = new AlienSprite(this, new Point(10, 200));
+        alien2 = new AlienSprite(this, new Point(10, 210));
     }
 
     /**
@@ -53,7 +52,11 @@ public class GameBoard {
      * @param g Der Grafik-Kontext
      */
     public void drawGame(Graphics g) {
-        // TODO: Alle Objekte zeichnen
+       
+        asteroid.draw(g);
+        alien.draw(g);
+        alien2.draw(g);
+      
     }
 
     /**
@@ -63,14 +66,13 @@ public class GameBoard {
      *      zurück gibt
      */
     public boolean updateGame() {
+        alien.move();
+        asteroid.move();
 
-        // TODO: Die Objekte bewegen
-
-        // Kollision erkennen
-// TODO: Einkommentieren
-//        if (alien.intersects(asteroid) && alien.isActive()) {
-//            alien.explode();
-//        }
+       if (alien.intersects(asteroid) && alien.isActive()) {
+            alien.explode();
+            alien2.move();
+       }
 
         return true;
     }

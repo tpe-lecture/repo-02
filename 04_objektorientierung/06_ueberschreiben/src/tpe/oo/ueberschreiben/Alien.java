@@ -32,6 +32,11 @@ public class Alien extends AnimatedSprite {
     /**
      * Alien explodieren lassen.
      */
+    
+    public void mousePressed(){
+      explode();  
+    }
+    
     public void explode() {
         setActive(false);
         setImages(new AnimatedImage(20,

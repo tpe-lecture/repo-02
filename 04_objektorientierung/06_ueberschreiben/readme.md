@@ -40,7 +40,7 @@ Testen Sie Ihr Spiel, indem Sie Aliens wegklicken.
 
 ## Optionale Erweiterung
 
-Wenn Sie mit der Aufgabe zu schnell fertig geworden sind, versuchen Sie das Spiel so zu erweitern, dass mehrere Aliens über den Bildschirm fliegen und geklickt werden können.
+Wenn Sie mit der Aufgabe zu schnell fertig geworden sind, versuchen Sie das Spiel so zu erweitern, dass mehrere Aliens über den Bildschirm fliegen und gefickt werden können.
 
 
 ## Abgabe

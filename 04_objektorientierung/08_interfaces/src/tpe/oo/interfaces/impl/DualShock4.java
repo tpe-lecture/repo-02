@@ -6,52 +6,52 @@ import tpe.oo.interfaces.api.AnalogController;
 import tpe.oo.interfaces.api.DigitalController;
 
 public class DualShock4 implements DigitalController, AnalogController {
-    private AnalogController ANAL = new AnalogControllerImpl();
-    private DigitalController DIGGI = new DigitalControllerImpl();
+    private AnalogController ana = new AnalogControllerImpl();
+    private DigitalController digi = new DigitalControllerImpl();
 
     @Override
     public void up(double percentage) {
-        ANAL.up(percentage);
+        ana.up(percentage);
     }
 
     @Override
     public void down(double percentage) {
-        ANAL.down(percentage);
+        ana.down(percentage);
     }
 
     @Override
     public void left(double percentage) {
-        ANAL.left(percentage);
+        ana.left(percentage);
     }
 
     @Override
     public void right(double percentage) {
-        ANAL.right(percentage);
+        ana.right(percentage);
     }
 
     @Override
     public void up() {
-        DIGGI.up();
+        digi.up();
     }
 
     @Override
     public void down() {
-        DIGGI.down();
+        digi.down();
     }
 
     @Override
     public void left() {
-        DIGGI.left();
+        digi.left();
     }
 
     @Override
     public void right() {
-        DIGGI.right();
+        digi.right();
     }
 
     @Override
     public Point getPosition() {
-        return new Point((int) (ANAL.getPosition().getX() + DIGGI.getPosition().getX()),
-                (int) (ANAL.getPosition().getY() + DIGGI.getPosition().getY()));
+        return new Point((int) (ana.getPosition().getX() + digi.getPosition().getX()),
+                (int) (ana.getPosition().getY() + digi.getPosition().getY()));
     }
 }

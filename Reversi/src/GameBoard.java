@@ -36,17 +36,28 @@ public class GameBoard {
 
 	void draw() {
 		System.out.print("   ");
-		for (int k = 0; k < size - 2; k++) {
+		for (int c = 65; c < size + 65; c++) { // Koordinatenbelegung A-Z
+			System.out.print((char) c + " ");
+		}
+
+		System.out.println();
+		System.out.print("     ");
+
+		for (int k = 0; k < size - 2; k++) { // "Deckel" des Spielfeldes
 			System.out.print("_ ");
 		}
+
 		System.out.println();
-		for (int i = 0; i < size; i++) {
+
+		for (int i = 0; i < size; i++) { // Schleife für jede Zeile
+			System.out.print(i + 1 + " "); // Nummerierung
 			if (0 < i && i < size - 1) {
 				System.out.print("|");
 			} else {
 				System.out.print(" ");
 			}
-			for (int j = 0; j < size; j++) {
+			for (int j = 0; j < size; j++) { // Schleife für jedes Element der
+												// Zeile
 				System.out.print(stone[i][j]);
 				if (!(j == size - 1 && (i == 0 || i == size - 1))) {
 					System.out.print("|");

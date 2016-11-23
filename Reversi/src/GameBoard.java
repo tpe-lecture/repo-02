@@ -35,14 +35,17 @@ public class GameBoard {
 	 */
 
 	void draw() {
-		System.out.print("   ");
+		String space = "";
+		if (size > 9) { // Anpassung falls Nummerierung 2-stellig wird
+			space = " ";
+		}
+		System.out.print("   " + space);
 		for (int c = 65; c < size + 65; c++) { // Koordinatenbelegung A-Z
 			System.out.print((char) c + " ");
 		}
 
 		System.out.println();
-		System.out.print("     ");
-
+		System.out.print("     " + space);
 		for (int k = 0; k < size - 2; k++) { // "Deckel" des Spielfeldes
 			System.out.print("_ ");
 		}
@@ -51,6 +54,9 @@ public class GameBoard {
 
 		for (int i = 0; i < size; i++) { // Schleife für jede Zeile
 			System.out.print(i + 1 + " "); // Nummerierung
+			if (size > 9 && i < 9) {
+				System.out.print(" ");
+			}
 			if (0 < i && i < size - 1) {
 				System.out.print("|");
 			} else {

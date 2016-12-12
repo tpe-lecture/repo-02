@@ -19,14 +19,15 @@ public class Main {
     public static void main(String[] args) {
 
         NumberSelector s = new NumberSelector();
-
-        // TODO: Gerade Zaheln filtern
-        int[] gerade = null;
+        
+        Predicate<Integer> g =  a ->  a % 2 == 0;
+        Predicate<Integer> u =  a ->  a % 2 == 1;
+        
+        int[] gerade = s.filter(g, ZAHLEN);
 
         System.out.println(Arrays.toString(gerade));
 
-        // TODO: Ungerade Zaheln filtern
-        int[] ungerade = null;
+        int[] ungerade = s.filter(u, ZAHLEN);;
 
         System.out.println(Arrays.toString(ungerade));
 

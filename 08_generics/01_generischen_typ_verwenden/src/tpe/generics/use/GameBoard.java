@@ -131,7 +131,7 @@ public class GameBoard extends Board {
         if (!muenzen.isEmpty()) {
 
             // TODO: Oberstes Sprite vom Stapel ansehen und s zuweisen
-            Sprite s = muenzen.pop();
+            Sprite s = muenzen.peak();
             muenzen.push(s);
 
             if (s.intersects(new Point(e.getX(), e.getY()))) {

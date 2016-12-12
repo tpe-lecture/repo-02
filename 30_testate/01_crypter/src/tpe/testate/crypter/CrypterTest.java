@@ -13,7 +13,7 @@ public class CrypterTest {
     public void testEncrypt() {
         Crypter c = new CrypterImpl();
         assertEquals("4bcd3fghijk1mn0pqrs7uvwxyzl2ea56t89o",
-                c.encrypt("abcdefghijklmnopqrstuvwxyz1234567890"));
+           c.encrypt("abcdefghijklmnopqrstuvwxyz1234567890"));
 
         assertEquals("7p3 im s0s3 2ol6 is7 3in3 sup3r v0r13sung",
                 c.encrypt("tpe im sose 2016 ist eine super vorlesung"));
